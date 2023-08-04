@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
 import { Overlay, ModalWindow } from './Modal.styled';
 
-const modalRoot = document.querySelector('#modal-root');
+const modalRoot = document.querySelector('#root');
 
 export class Modal extends Component {
   componentDidMount() {
@@ -45,4 +45,3 @@ Modal.propTypes = {
   tags: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
 };
-
