@@ -2,6 +2,8 @@ import { Component } from 'react';
 import * as API from '../src/services/Pixabay.API';
 import { SearchBar } from 'components/SearchBar/SearchBar';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
+import { Loader } from 'components/Loader/Loader';
+import { Button } from 'components/Button/Button';
 import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -62,7 +64,7 @@ export class App extends Component {
     }
   };
   render() {
-    const { images } = this.state;
+    const { images, isLoading, currentPage, totalPages } = this.state;
 
     return (
       <div>
@@ -75,32 +77,17 @@ export class App extends Component {
             style={{
               padding: 100,
               textAlign: 'center',
-              fontSize: 30,
+              fontSize: 24,
+              color: 'grey',
             }}
           >
-            Image gallery is empty... 📷
-            </p>
-            
-        )}
-        {/* <ToastContainer transition={Slide} />
-        <SearchBar onSubmit={this.handleSubmit} />
-        {images.length > 0 ? (
-          <ImageGallery images={images} />
-        ) : (
-          <p
-            style={{
-              padding: 100,
-              textAlign: 'center',
-              fontSize: 30,
-            }}
-          >
-            Image gallery is empty... 📷
+            Image gallery is empty...
           </p>
         )}
         {isLoading && <Loader />}
         {images.length > 0 && totalPages !== currentPage && !isLoading && (
           <Button onClick={this.loadMore} />
-        )} */}
+        )}
       </div>
     );
   }

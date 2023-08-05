@@ -9,8 +9,9 @@ export const SearchForm = styled.form`
   align-items: center;
   justify-content: center;
   padding: 20px 0 20px 0;
-  background: linear-gradient(rgba(125, 127, 239, 0.8), rgba(5, 5, 5, 0.6));
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  background: linear-gradient(#7d7fefcc, rgba(5, 5, 5, 0.6));
+  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+    0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
   z-index: 999;
 `;
 
