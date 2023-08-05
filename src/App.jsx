@@ -17,11 +17,14 @@ export class App extends Component {
     totalPages: 0,
   };
   componentDidUpdate(_, prevState) {
-    if (
-      prevState.searchName !== this.state.searchName ||
-      prevState.currentPage !== this.state.currentPage
-    ) {
-      this.addImages();
+    if (this.state.searchName.length > 0) {
+      if (
+        prevState.searchName !== this.state.searchName ||
+        prevState.currentPage !== this.state.currentPage ||
+        (this.state.images.length === 0 && !this.state.isLoading)
+      ) {
+        this.addImages();
+      }
     }
   }
 
@@ -32,11 +35,11 @@ export class App extends Component {
   };
 
   handleSubmit = query => {
-    this.setState({
-      searchName: query,
-      images: [],
-      currentPage: 1,
-    });
+      this.setState({
+        searchName: query,
+        images: [],
+        currentPage: 1,
+      });
   };
 
   addImages = async () => {
